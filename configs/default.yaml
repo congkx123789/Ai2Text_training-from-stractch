@@ -1,0 +1,44 @@
+# Default configuration for basic ASR training
+
+# Model configuration
+model:
+  input_dim: 80                    # Mel spectrogram features
+  hidden_dim: 256                  # LSTM hidden dimension
+  num_layers: 3                    # Number of LSTM layers
+  vocab_size: 100                  # Vocabulary size (characters/symbols)
+  dropout: 0.2                      # Dropout rate
+  bidirectional: true              # Use bidirectional LSTM
+
+# Training configuration
+training:
+  num_epochs: 10                   # Number of training epochs
+  batch_size: 16                   # Batch size
+  lr: 0.001                        # Learning rate
+  weight_decay: 1e-5               # Weight decay for regularization
+  grad_clip: 5.0                    # Gradient clipping max norm
+  save_interval: 1                 # Save checkpoint every N epochs
+
+# Data configuration
+data:
+  train_csv: "data/sample_data.csv"  # Training data CSV
+  val_csv: null                     # Validation data CSV (optional)
+  test_csv: null                    # Test data CSV (optional)
+  sample_rate: 16000                # Audio sample rate
+  n_mels: 80                        # Number of mel filter banks
+  n_fft: 512                        # FFT size
+  hop_length: 160                   # Hop length for STFT
+  win_length: 400                   # Window length for STFT
+
+# Paths
+checkpoint_dir: "checkpoints"       # Checkpoint directory
+log_dir: "logs"                     # Log directory
+output_dir: "results"               # Output directory
+
+# Device
+device: "cuda"                      # Device: "cuda" or "cpu"
+
+# Logging
+logging:
+  log_level: "INFO"                 # Logging level
+  log_file: null                    # Log file path (null for console only)
+
