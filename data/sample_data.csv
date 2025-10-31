@@ -1,0 +1,5 @@
+file_path,transcript,split,speaker_id
+data/raw/sample1.wav,xin chào việt nam,train,speaker_01
+data/raw/sample2.wav,tôi là sinh viên,train,speaker_02
+data/raw/sample3.wav,hôm nay trời đẹp,val,speaker_01
+data/raw/sample4.wav,chúng tôi học tiếng việt,test,speaker_02
